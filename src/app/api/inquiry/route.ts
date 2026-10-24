@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import { normalizeInquiry, validateInquiry, type InquiryResponse } from "@/lib/inquiry";
 
-// Inquiries are forwarded to a server-side webhook so no credentials reach the browser.
-// See .env.example for the variables.
+// Inquiries are saved to the Supabase "inquiries" table from the server, so the secret key
+// never reaches the browser. See .env.example for the variables.
 
 function respond(body: InquiryResponse, status: number) {
   return NextResponse.json(body, { status, headers: { "Cache-Control": "no-store" } });
@@ -32,33 +32,41 @@ export async function POST(request: Request) {
     return respond({ ok: false, reason: "invalid", errors }, 422);
   }
 
-  const webhookUrl = process.env.INQUIRY_WEBHOOK_URL;
-  if (!webhookUrl) {
+  const supabaseUrl = process.env.SUPABASE_URL;
+  const secretKey = process.env.SUPABASE_SECRET_KEY;
+  if (!supabaseUrl || !secretKey) {
     return respond({ ok: false, reason: "not_configured" }, 503);
   }
 
-  const headers: Record<string, string> = {
-    "Content-Type": "application/json",
-    Accept: "application/json",
+  // Optional fields are stored as NULL rather than empty strings.
+  const row = {
+    first_name: inquiry.firstName,
+    last_name: inquiry.lastName || null,
+    phone: inquiry.phone || null,
+    email: inquiry.email,
+    referral_source: inquiry.referralSource || null,
+    message: inquiry.message || null,
   };
-  if (process.env.INQUIRY_WEBHOOK_SECRET) {
-    headers.Authorization = `Bearer ${process.env.INQUIRY_WEBHOOK_SECRET}`;
-  }
 
   try {
-    const response = await fetch(webhookUrl, {
+    // The apikey header alone authenticates both new (sb_secret_…) and legacy service_role keys.
+    const response = await fetch(`${supabaseUrl.replace(/\/+$/, "")}/rest/v1/inquiries`, {
       method: "POST",
-      headers,
-      body: JSON.stringify({ ...inquiry, source: "landlordgopher.com", submittedAt: new Date().toISOString() }),
+      headers: {
+        "Content-Type": "application/json",
+        apikey: secretKey,
+        Prefer: "return=minimal",
+      },
+      body: JSON.stringify(row),
       signal: AbortSignal.timeout(10_000),
       cache: "no-store",
     });
     if (!response.ok) {
-      console.error(`Inquiry webhook responded with ${response.status}`);
+      console.error(`Supabase insert responded with ${response.status}: ${await response.text()}`);
       return respond({ ok: false, reason: "delivery_failed" }, 502);
     }
   } catch (error) {
-    console.error("Inquiry webhook request failed", error);
+    console.error("Supabase insert request failed", error);
     return respond({ ok: false, reason: "delivery_failed" }, 502);
   }
 

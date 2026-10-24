@@ -5,7 +5,7 @@ Marketing site for Landlord Gopher Investor Concierge Services, built with Next.
 ## Structure
 
 - `src/app/` holds the routes: `/`, `/about`, `/current-listings`, `/current-listings/[id]`, `/contact`, plus `sitemap.xml` and `robots.txt`. The listings routes render on demand because they read search filters from the URL; the rest are prerendered as static pages.
-- `src/app/api/inquiry/route.ts` is the inquiry form endpoint. It forwards submissions to a server-side webhook.
+- `src/app/api/inquiry/route.ts` is the inquiry form endpoint. It saves submissions to Supabase from the server.
 - `src/components/` holds the reusable sections: `SiteHeader`, `Hero`, `Services`, `Testimonials`, `InquirySection`/`InquiryForm`, `SiteFooter`, `PageHeader`, `ButtonLink`.
 - `src/content/site.ts` holds typed site content: navigation, offer, service groups and testimonials.
 - `src/lib/inquiry.ts` defines the inquiry types and the validation shared by the form and the API route.
@@ -26,17 +26,19 @@ npm start          # serve the production build
 
 ## Inquiry form
 
+Submissions are saved to the `inquiries` table in Supabase (schema in `supabase/migrations/`). The table has row-level security on with no policies, so only the server-side secret key can write to it.
+
 Copy `.env.example` to `.env.local` and set:
 
 | Variable | Purpose |
 | --- | --- |
-| `INQUIRY_WEBHOOK_URL` | HTTPS endpoint that receives each inquiry as JSON (CRM, Zapier/Make, Formspree, etc.). |
-| `INQUIRY_WEBHOOK_SECRET` | Optional. Sent as `Authorization: Bearer <value>`. |
+| `SUPABASE_URL` | Supabase project URL (`https://bgjkjtfgrfiszbzatriq.supabase.co`). |
+| `SUPABASE_SECRET_KEY` | Supabase secret key (`sb_secret_…` or legacy `service_role`), from Project Settings → API Keys. Never commit it or prefix it with `NEXT_PUBLIC_`. |
 | `NEXT_PUBLIC_SITE_URL` | Optional canonical URL for metadata and the sitemap (default `https://landlordgopher.com`). |
 
-These are read on the server only. Until `INQUIRY_WEBHOOK_URL` is set, the endpoint returns `503 not_configured` and the form tells visitors their message was **not** sent. It never shows a false success.
+The Supabase variables are read on the server only, and must also be set in the hosting provider's environment settings for production. Until both are set, the endpoint returns `503 not_configured` and the form tells visitors their message was **not** sent. It never shows a false success.
 
-Payload fields: `firstName`, `lastName`, `phone`, `email`, `referralSource`, `message`, `source`, `submittedAt`.
+Columns written: `first_name`, `last_name`, `phone`, `email`, `referral_source`, `message`. `id`, `created_at`, `source` and `status` (`new`) come from table defaults.
 
 ## Current listings
 
