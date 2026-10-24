@@ -1,35 +1,32 @@
 import type { Metadata } from "next";
-import { ButtonLink } from "@/components/ButtonLink";
-import { PageHeader } from "@/components/PageHeader";
-import { Services } from "@/components/Services";
-import { Testimonials } from "@/components/Testimonials";
-import { routes, site } from "@/content/site";
+import { AboutHero } from "@/components/about/AboutHero";
+import {
+  AwardsSection,
+  CommitmentsSection,
+  ExperienceStrip,
+  InvestSection,
+  PhilosophySection,
+  StorySection,
+} from "@/components/about/AboutSections";
+import { CtaBand } from "@/components/CtaBand";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: `About ${site.legalName}: full-service property management for ${site.offer.price}.`,
+  description:
+    "Landlord Gopher is property management with a personal touch: built by investors managing residential property in Baltimore and the DMV since 2001, with flat-rate pricing instead of a 10% fee.",
 };
 
 export default function AboutPage() {
   return (
     <>
-      <PageHeader
-        eyebrow="About us"
-        title="#1 ranked property manager in the region since 2017."
-        intro={`${site.legalName} helps owners rent and manage their properties, all in one place. ${site.offer.label} is only ${site.offer.price}.`}
-      />
-      <Services />
-      <Testimonials />
-      <section aria-labelledby="about-cta-title" className="bg-white py-16 text-center">
-        <div className="container-page">
-          <h2 id="about-cta-title" className="font-serif text-3xl font-bold text-navy-900">
-            Ready to get your property rented?
-          </h2>
-          <ButtonLink href={routes.contact} size="lg" arrow className="mt-6">
-            Get Started
-          </ButtonLink>
-        </div>
-      </section>
+      <AboutHero />
+      <ExperienceStrip />
+      <StorySection />
+      <PhilosophySection />
+      <CommitmentsSection />
+      <AwardsSection />
+      <InvestSection />
+      <CtaBand title="Your property. Our priority." text="Let’s talk about your property and how we can help." />
     </>
   );
 }

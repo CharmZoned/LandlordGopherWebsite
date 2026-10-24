@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { routes, site } from "@/content/site";
 import { ButtonLink } from "./ButtonLink";
+import { Eyebrow } from "./Eyebrow";
 import { HeroScene } from "./HeroScene";
 
 export function Hero() {
@@ -11,10 +12,7 @@ export function Hero() {
     >
       <div className="container-page grid items-center gap-10 pt-10 pb-0 sm:pt-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-6 lg:pt-16">
         <div className="max-w-xl pb-2 lg:pb-16">
-          <p className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.18em] text-gold-700">
-            Property management
-            <span aria-hidden="true" className="h-0.5 w-12 bg-gold-500" />
-          </p>
+          <Eyebrow>Property management</Eyebrow>
           <h1
             id="hero-title"
             className="mt-4 font-serif text-[2.75rem] leading-[1.02] font-bold tracking-tight text-navy-900 sm:text-6xl lg:text-[4.25rem]"

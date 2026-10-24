@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ComponentProps } from "react";
 import { ArrowIcon } from "./ArrowIcon";
 
-type Variant = "primary" | "outline" | "text";
+type Variant = "primary" | "outline" | "text" | "text-inverse";
 type Size = "md" | "lg";
 
 const base =
@@ -14,6 +14,7 @@ const variants: Record<Variant, string> = {
   outline:
     "rounded-md border-2 border-brand-600 bg-white text-brand-700 hover:bg-brand-50",
   text: "min-h-11 text-brand-700 underline decoration-2 underline-offset-4 hover:text-navy-900",
+  "text-inverse": "min-h-11 text-white underline decoration-2 underline-offset-4 hover:text-gold-500",
 };
 
 const sizes: Record<Size, string> = {
@@ -22,7 +23,7 @@ const sizes: Record<Size, string> = {
 };
 
 export function buttonClasses(variant: Variant = "primary", size: Size = "md") {
-  return [base, variants[variant], variant === "text" ? "" : sizes[size]].join(" ");
+  return [base, variants[variant], variant.startsWith("text") ? "" : sizes[size]].join(" ");
 }
 
 type ButtonLinkProps = ComponentProps<typeof Link> & {
