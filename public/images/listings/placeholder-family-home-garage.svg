@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-label="Placeholder illustration: larger single-family home with garage">
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfe0f5"/><stop offset="1" stop-color="#f1f6fd"/></linearGradient></defs>
+<rect width="1200" height="800" fill="url(#sky)"/>
+<g fill="#b9d0ec"><circle cx="90" cy="560" r="110"/><circle cx="1120" cy="540" r="130"/><circle cx="210" cy="600" r="80"/><circle cx="1000" cy="610" r="90"/></g>
+
+<rect x="250" y="290" width="420" height="350" fill="#c9cfd8"/>
+<path d="M225 305 460 150l235 155Z" fill="#5f6f86"/>
+<rect x="670" y="400" width="300" height="240" fill="#d7dce3"/>
+<path d="M650 410 820 300l170 110Z" fill="#6d7f99"/>
+<rect x="705" y="470" width="230" height="170" fill="#f4f8fd"/>
+<g stroke="#c9d3df" stroke-width="4"><path d="M705 500h230"/><path d="M705 535h230"/><path d="M705 570h230"/><path d="M705 605h230"/></g>
+<rect x="290" y="340" width="80" height="80" rx="3" fill="#cfe0f5" stroke="#ffffff" stroke-width="4"/><rect x="415" y="340" width="80" height="80" rx="3" fill="#cfe0f5" stroke="#ffffff" stroke-width="4"/><rect x="540" y="340" width="80" height="80" rx="3" fill="#cfe0f5" stroke="#ffffff" stroke-width="4"/><rect x="290" y="470" width="80" height="80" rx="3" fill="#cfe0f5" stroke="#ffffff" stroke-width="4"/><rect x="415" y="470" width="80" height="80" rx="3" fill="#cfe0f5" stroke="#ffffff" stroke-width="4"/><rect x="540" y="470" width="80" height="80" rx="3" fill="#cfe0f5" stroke="#ffffff" stroke-width="4"/>
+<rect x="420" y="540" width="70" height="100" fill="#3d5270"/>
+<rect y="640" width="1200" height="160" fill="#c3d7ee"/>
+<path d="M0 700c300-30 800-30 1200 0v100H0Z" fill="#b3cbe8"/>
+<g transform="translate(36 690)"><rect width="560" height="76" rx="38" fill="#ffffff" fill-opacity="0.94"/>
+<text x="280" y="50" text-anchor="middle" font-family="'Source Sans 3', system-ui, sans-serif" font-size="36" font-weight="700" letter-spacing="3" fill="#0b2a5b">PLACEHOLDER IMAGE</text></g>
+</svg>

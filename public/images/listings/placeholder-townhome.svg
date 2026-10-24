@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-label="Placeholder illustration: townhome">
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfe0f5"/><stop offset="1" stop-color="#f1f6fd"/></linearGradient></defs>
+<rect width="1200" height="800" fill="url(#sky)"/>
+<g fill="#b9d0ec"><circle cx="90" cy="560" r="110"/><circle cx="1120" cy="540" r="130"/><circle cx="210" cy="600" r="80"/><circle cx="1000" cy="610" r="90"/></g>
+
+<rect x="330" y="300" width="540" height="340" fill="#b08f86"/>
+<path d="M310 310 465 180 600 300 735 180 890 310Z" fill="#5f6f86"/>
+<rect x="370" y="350" width="70" height="80" rx="3" fill="#eef4fc" stroke="#f4ede9" stroke-width="4"/><rect x="480" y="350" width="70" height="80" rx="3" fill="#eef4fc" stroke="#f4ede9" stroke-width="4"/><rect x="370" y="475" width="70" height="80" rx="3" fill="#eef4fc" stroke="#f4ede9" stroke-width="4"/><rect x="480" y="475" width="70" height="80" rx="3" fill="#eef4fc" stroke="#f4ede9" stroke-width="4"/>
+<rect x="720" y="350" width="70" height="80" rx="3" fill="#eef4fc" stroke="#f4ede9" stroke-width="4"/><rect x="830" y="350" width="70" height="80" rx="3" fill="#eef4fc" stroke="#f4ede9" stroke-width="4"/><rect x="720" y="475" width="70" height="80" rx="3" fill="#eef4fc" stroke="#f4ede9" stroke-width="4"/><rect x="830" y="475" width="70" height="80" rx="3" fill="#eef4fc" stroke="#f4ede9" stroke-width="4"/>
+<rect x="568" y="500" width="64" height="140" fill="#3d5270"/>
+<rect y="640" width="1200" height="160" fill="#c3d7ee"/>
+<path d="M0 700c300-30 800-30 1200 0v100H0Z" fill="#b3cbe8"/>
+<g transform="translate(36 690)"><rect width="560" height="76" rx="38" fill="#ffffff" fill-opacity="0.94"/>
+<text x="280" y="50" text-anchor="middle" font-family="'Source Sans 3', system-ui, sans-serif" font-size="36" font-weight="700" letter-spacing="3" fill="#0b2a5b">PLACEHOLDER IMAGE</text></g>
+</svg>
