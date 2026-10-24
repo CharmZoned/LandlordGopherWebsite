@@ -56,7 +56,9 @@ export function SiteHeader() {
         >
           <ul className="flex flex-col lg:flex-row lg:items-center lg:gap-8">
             {navLinks.map((link) => {
-              const current = pathname === link.href;
+              // Listing detail pages (/current-listings/…) keep their section highlighted.
+              const current =
+                pathname === link.href || (link.href !== routes.home && pathname.startsWith(`${link.href}/`));
               return (
                 <li key={link.href}>
                   <Link

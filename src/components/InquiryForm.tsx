@@ -10,6 +10,7 @@ import {
   type InquiryResponse,
 } from "@/lib/inquiry";
 import { ArrowIcon } from "./ArrowIcon";
+import { inputClasses } from "./formStyles";
 
 type Status =
   | { kind: "idle" }
@@ -28,8 +29,6 @@ const failureMessages: Record<Exclude<InquiryResponse, { ok: true }>["reason"], 
 // Field order decides which invalid field receives focus first.
 const fieldOrder: InquiryField[] = ["firstName", "lastName", "phone", "email", "referralSource", "message"];
 
-const inputClasses =
-  "block w-full rounded-md border border-line bg-white px-3.5 py-2.5 text-base text-navy-900 placeholder:text-ink-500 hover:border-ink-500 focus:border-brand-600 focus:outline-none focus-visible:outline-3 focus-visible:outline-offset-1 focus-visible:outline-brand-600 aria-[invalid=true]:border-danger-700";
 
 type FieldProps = {
   id: string;
