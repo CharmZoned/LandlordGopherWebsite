@@ -6,7 +6,7 @@ import { routes } from "@/content/site";
 import { AboutIcon } from "./AboutIcon";
 import { HouseKeyGold, HouseKeyNavy, HousesRow } from "./Illustrations";
 
-const sectionTitle = "font-serif text-3xl leading-tight font-bold tracking-tight text-navy-900 sm:text-[2.6rem]";
+const sectionTitle = "heading-section text-navy-900";
 
 export function ExperienceStrip() {
   return (
@@ -38,7 +38,7 @@ export function StorySection() {
           <h2 id="story-title" className={`mt-3 ${sectionTitle}`}>
             A better way to manage property.
           </h2>
-          <div className="mt-6 space-y-5 text-lg leading-relaxed text-ink-700">
+          <div className="mt-6 space-y-5 text-base leading-relaxed text-ink-700 sm:text-[1.0625rem]">
             <p>
               Our founders have worked in residential property management since 2001, managing thousands of units
               across Baltimore and the DMV.
@@ -52,12 +52,12 @@ export function StorySection() {
         </div>
 
         <aside className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand-50 to-brand-100 px-7 pt-9 pb-24 shadow-[0_8px_24px_-16px_rgba(11,42,91,0.35)] sm:px-10">
-          <p className="font-serif text-3xl leading-tight font-bold text-navy-900 sm:text-4xl">
+          <p className="heading-section text-navy-900">
             <span className="block">One property or 100.</span>{" "}
             <span className="block text-brand-600">You matter to us.</span>
           </p>
           <span aria-hidden="true" className="mt-5 block h-[3px] w-12 rounded-full bg-gold-500" />
-          <p className="mt-5 max-w-xs text-lg leading-relaxed text-ink-700">
+          <p className="mt-5 max-w-xs text-base leading-relaxed text-ink-700 sm:text-[1.0625rem]">
             As investors ourselves, we understand what your property means to you.
           </p>
           <HousesRow className="absolute right-0 bottom-0 w-56 sm:w-64" />
@@ -78,7 +78,7 @@ export function PhilosophySection() {
             <span className="block">Flat-rate pricing.</span>{" "}
             <span className="block">No 10% management fee.</span>
           </h2>
-          <p className="mt-5 text-lg leading-relaxed text-ink-700">
+          <p className="mt-5 text-base leading-relaxed text-ink-700 sm:text-[1.0625rem]">
             Our management fee is based on the service we provide—not a percentage of your rent. Whether you own a
             single-family home, townhome, or apartment, our philosophy stays the same: straightforward pricing and
             dependable support.

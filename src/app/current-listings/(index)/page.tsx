@@ -53,12 +53,12 @@ export default async function CurrentListingsPage({ searchParams }: PageProps) {
               <span aria-hidden="true" className="block h-[3px] w-10 rounded-full bg-gold-500" />
               <h2
                 id="results-title"
-                className="mt-4 font-serif text-3xl font-bold tracking-tight text-navy-900 sm:text-[2.6rem]"
+                className="heading-section mt-4 text-navy-900"
               >
                 Explore rentals
               </h2>
               {/* Stays mounted across searches so screen readers announce the new count. */}
-              <p role="status" aria-live="polite" aria-atomic="true" className="mt-1 text-lg text-ink-700 sm:text-xl">
+              <p role="status" aria-live="polite" aria-atomic="true" className="mt-1 text-lg text-ink-700">
                 {resultSummary(results.length, listings.length, demo, filtered)}
               </p>
             </div>
@@ -68,7 +68,7 @@ export default async function CurrentListingsPage({ searchParams }: PageProps) {
           {listings.length === 0 ? (
             <div className="mt-10 rounded-xl border border-dashed border-line px-6 py-12 text-center">
               <h3 className="font-serif text-2xl font-bold text-navy-900">No listings are posted right now</h3>
-              <p className="mx-auto mt-3 max-w-xl text-lg text-ink-700">
+              <p className="mx-auto mt-3 max-w-xl text-base text-ink-700 sm:text-[1.0625rem]">
                 Check back soon for available homes, or contact us and we’ll let you know what’s coming up.
               </p>
               <ButtonLink href={routes.contact} arrow className="mt-6">

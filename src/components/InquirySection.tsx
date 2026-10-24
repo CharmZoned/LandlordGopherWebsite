@@ -15,11 +15,11 @@ export function InquirySection({ headingLevel: Heading = "h2" }: InquirySectionP
         <div className="lg:border-r lg:border-line lg:pr-12">
           <Heading
             id="inquiry-title"
-            className="font-serif text-3xl leading-tight font-bold tracking-tight text-navy-900 sm:text-[2.6rem]"
+            className="heading-section text-navy-900"
           >
             Get help renting &amp; managing your property.
           </Heading>
-          <p className="mt-5 text-xl leading-relaxed text-ink-700">
+          <p className="mt-5 text-lg leading-relaxed text-ink-700">
             Tell us a little about your property or portfolio.
           </p>
           <HomesIllustration className="mt-10 hidden w-full max-w-sm lg:block" />

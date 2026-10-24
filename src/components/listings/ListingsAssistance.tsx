@@ -11,7 +11,7 @@ export function ListingsAssistance() {
         <span aria-hidden="true" className="mx-auto block h-[3px] w-14 rounded-full bg-gold-500" />
         <h2
           id="listings-help-title"
-          className="mt-5 font-serif text-3xl leading-tight font-bold tracking-tight text-balance text-navy-900 sm:text-[2.4rem]"
+          className="heading-section mt-5 text-balance text-navy-900"
         >
           Need a hand finding your next home?
         </h2>

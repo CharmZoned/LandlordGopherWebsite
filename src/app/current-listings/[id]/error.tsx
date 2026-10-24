@@ -23,7 +23,9 @@ export default function ListingError({ reset }: { error: Error & { digest?: stri
         <h1 id="listing-error-title" className="font-serif text-3xl font-bold text-navy-900">
           We couldn’t load this listing right now
         </h1>
-        <p className="mt-3 text-lg text-ink-700">Please try again in a moment. If the problem continues, contact us and we’ll help.</p>
+        <p className="mt-3 text-base text-ink-700 sm:text-[1.0625rem]">
+          Please try again in a moment. If the problem continues, contact us and we’ll help.
+        </p>
         <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
           <button
             type="button"

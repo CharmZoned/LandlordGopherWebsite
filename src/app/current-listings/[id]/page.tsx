@@ -99,7 +99,7 @@ export default async function ListingDetailPage({ params, searchParams }: PagePr
             <div className="lg:pt-1">
               <h1
                 id="listing-title"
-                className="font-serif text-3xl leading-tight font-bold tracking-tight text-navy-900 sm:text-4xl"
+                className="heading-section text-navy-900"
               >
                 {heading}
               </h1>
@@ -142,7 +142,9 @@ export default async function ListingDetailPage({ params, searchParams }: PagePr
               <h2 id="listing-description-title" className="font-serif text-2xl font-bold text-navy-900">
                 About this home
               </h2>
-              <p className="mt-3 text-lg leading-relaxed whitespace-pre-line text-ink-700">{listing.description}</p>
+              <p className="mt-3 text-base leading-relaxed whitespace-pre-line text-ink-700 sm:text-[1.0625rem]">
+                {listing.description}
+              </p>
             </section>
           )}
         </div>

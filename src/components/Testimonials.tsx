@@ -42,7 +42,7 @@ export function Testimonials() {
       <div className="container-page">
         <h2
           id="reviews-title"
-          className="title-rule text-center font-serif text-3xl font-bold tracking-tight text-navy-900 sm:text-[2.6rem]"
+          className="heading-section title-rule text-center text-navy-900"
         >
           What our customers say
         </h2>

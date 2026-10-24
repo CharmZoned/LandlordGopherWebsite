@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ComponentProps } from "react";
 import { ArrowIcon } from "./ArrowIcon";
 
-type Variant = "primary" | "outline" | "text" | "text-inverse";
+type Variant = "primary" | "accent" | "outline" | "text" | "text-inverse";
 type Size = "md" | "lg";
 
 const base =
@@ -11,6 +11,8 @@ const base =
 const variants: Record<Variant, string> = {
   primary:
     "rounded-md bg-brand-600 text-white shadow-[0_6px_16px_-6px_rgba(21,84,189,0.6)] hover:bg-brand-700",
+  accent:
+    "rounded-md bg-gold-500 text-navy-950 shadow-[0_6px_16px_-6px_rgba(226,169,16,0.7)] hover:bg-[#cf9a0c]",
   outline:
     "rounded-md border-2 border-brand-600 bg-white text-brand-700 hover:bg-brand-50",
   text: "min-h-11 text-brand-700 underline decoration-2 underline-offset-4 hover:text-navy-900",

@@ -7,7 +7,7 @@ export default function ListingsLoading() {
       <ListingsHero />
       <section aria-labelledby="results-title" aria-busy="true" className="bg-white py-16">
         <div className="container-page">
-          <h2 id="results-title" className="font-serif text-3xl font-bold tracking-tight text-navy-900 sm:text-[2.6rem]">
+          <h2 id="results-title" className="heading-section text-navy-900">
             Explore rentals
           </h2>
           <p role="status" className="mt-1 text-lg text-ink-700">

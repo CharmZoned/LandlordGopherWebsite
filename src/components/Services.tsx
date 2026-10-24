@@ -11,7 +11,7 @@ export function Services({ id = "services" }: ServicesProps) {
       <div className="container-page">
         <h2
           id={`${id}-title`}
-          className="title-rule text-center font-serif text-3xl font-bold tracking-tight text-navy-900 sm:text-[2.6rem]"
+          className="heading-section title-rule text-center text-navy-900"
         >
           Support at every step of renting.
         </h2>

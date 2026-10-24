@@ -55,31 +55,49 @@ export function SiteHeader() {
           className={`${open ? "flex" : "hidden"} absolute inset-x-0 top-full flex-col gap-2 border-b border-line bg-white px-4 pb-6 pt-2 shadow-lg lg:static lg:flex lg:flex-row lg:items-center lg:gap-10 lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none`}
         >
           <ul className="flex flex-col lg:flex-row lg:items-center lg:gap-8">
-            {navLinks.map((link) => {
-              // Listing detail pages (/current-listings/…) keep their section highlighted.
-              const current =
-                pathname === link.href || (link.href !== routes.home && pathname.startsWith(`${link.href}/`));
-              return (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    aria-current={current ? "page" : undefined}
-                    onClick={() => setOpen(false)}
-                    className={`relative flex min-h-12 items-center text-base font-semibold text-navy-900 hover:text-brand-700 lg:min-h-11 lg:text-[0.95rem] ${
-                      current
-                        ? "after:absolute after:bottom-1 after:left-0 after:h-[3px] after:w-8 after:rounded-full after:bg-gold-500 lg:after:left-1/2 lg:after:-translate-x-1/2"
-                        : ""
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              );
-            })}
+            {navLinks
+              .filter((link) => link.href !== routes.contact)
+              .map((link) => {
+                // Listing detail pages (/current-listings/…) keep their section highlighted.
+                const current =
+                  pathname === link.href || (link.href !== routes.home && pathname.startsWith(`${link.href}/`));
+                return (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      aria-current={current ? "page" : undefined}
+                      onClick={() => setOpen(false)}
+                      className={`relative flex min-h-12 items-center text-base font-semibold text-navy-900 hover:text-brand-700 lg:min-h-11 lg:text-[0.95rem] ${
+                        current
+                          ? "after:absolute after:bottom-1 after:left-0 after:h-[3px] after:w-8 after:rounded-full after:bg-gold-500 lg:after:left-1/2 lg:after:-translate-x-1/2"
+                          : ""
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                );
+              })}
           </ul>
-          <ButtonLink href={routes.contact} className="mt-2 lg:mt-0" onClick={() => setOpen(false)}>
-            Get Started
-          </ButtonLink>
+          <div className="mt-2 flex flex-col gap-2 lg:mt-0 lg:flex-row lg:items-center lg:gap-3">
+            <ButtonLink
+              href={routes.contact}
+              aria-current={pathname === routes.contact ? "page" : undefined}
+              className="w-full lg:w-auto"
+              onClick={() => setOpen(false)}
+            >
+              Contact Us
+            </ButtonLink>
+            <ButtonLink
+              href={routes.login}
+              variant="accent"
+              aria-current={pathname === routes.login ? "page" : undefined}
+              className="w-full lg:w-auto"
+              onClick={() => setOpen(false)}
+            >
+              Login
+            </ButtonLink>
+          </div>
         </nav>
       </div>
     </header>

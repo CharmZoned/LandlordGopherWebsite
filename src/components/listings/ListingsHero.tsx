@@ -15,12 +15,12 @@ export function ListingsHero() {
           <Eyebrow>Current listings</Eyebrow>
           <h1
             id="listings-title"
-            className="mt-3 font-serif text-[2.5rem] leading-[1.05] font-bold tracking-tight text-navy-900 sm:text-5xl lg:text-[3.6rem]"
+            className="mt-3 font-serif text-[2.125rem] leading-[1.05] font-bold tracking-tight text-navy-900 sm:text-[2.75rem] lg:text-[3.25rem]"
           >
             Find your next place <br className="hidden sm:inline" />
             to <span className="text-brand-600">call home.</span>
           </h1>
-          <p className="mt-4 text-lg leading-relaxed text-ink-700 sm:text-xl">
+          <p className="mt-4 text-lg leading-relaxed text-ink-700">
             Explore rental homes across Baltimore and the DMV.
           </p>
         </div>

@@ -38,6 +38,7 @@ export const routes = {
   about: "/about",
   listings: "/current-listings",
   contact: "/contact",
+  login: "/login",
 } as const;
 
 export const navLinks: readonly NavLink[] = [

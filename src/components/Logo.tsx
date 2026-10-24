@@ -8,7 +8,7 @@ type LogoProps = {
 };
 
 // Source artwork is 1040×387; width/height keep its aspect ratio at any rendered size.
-export function Logo({ className = "w-44 sm:w-52", priority = false }: LogoProps) {
+export function Logo({ className = "w-40 sm:w-44", priority = false }: LogoProps) {
   return (
     <Link href={routes.home} className={`block shrink-0 ${className}`}>
       <Image
@@ -16,7 +16,7 @@ export function Logo({ className = "w-44 sm:w-52", priority = false }: LogoProps
         alt={`${site.legalName} home`}
         width={1040}
         height={387}
-        sizes="(min-width: 640px) 208px, 176px"
+        sizes="(min-width: 640px) 176px, 160px"
         priority={priority}
         className="h-auto w-full"
       />

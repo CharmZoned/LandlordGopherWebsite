@@ -15,16 +15,16 @@ export function Hero() {
           <Eyebrow>Property management</Eyebrow>
           <h1
             id="hero-title"
-            className="mt-4 font-serif text-[2.75rem] leading-[1.02] font-bold tracking-tight text-navy-900 sm:text-6xl lg:text-[4.25rem]"
+            className="heading-display mt-4"
           >
             Property management <span className="text-brand-600">made simple.</span>
           </h1>
-          <p className="mt-6 text-xl leading-relaxed text-ink-700 sm:text-[1.375rem]">
+          <p className="mt-6 text-lg leading-relaxed text-ink-700">
             Help renting and managing your property, all in one place.
           </p>
           <p className="mt-7">
             <span className="block text-xl font-bold text-navy-900">{site.offer.label} —</span>
-            <span className="block text-4xl font-bold tracking-tight text-brand-600 sm:text-[2.75rem]">
+            <span className="block text-3xl font-bold tracking-tight text-brand-600 sm:text-4xl">
               {site.offer.price}
             </span>
           </p>

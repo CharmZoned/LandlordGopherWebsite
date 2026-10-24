@@ -15,12 +15,12 @@ export function AboutHero() {
           <Eyebrow>About Landlord Gopher</Eyebrow>
           <h1
             id="about-title"
-            className="mt-4 font-serif text-[2.6rem] leading-[1.04] font-bold tracking-tight text-navy-900 sm:text-6xl lg:text-[4rem]"
+            className="heading-display mt-4"
           >
             <span className="block">Property management.</span>{" "}
             <span className="block text-brand-600">With a personal touch.</span>
           </h1>
-          <p className="mt-6 text-xl leading-relaxed text-ink-700">
+          <p className="mt-6 text-lg leading-relaxed text-ink-700">
             Built by property investors. Focused on better service, straightforward pricing, and the people behind
             every property.
           </p>
